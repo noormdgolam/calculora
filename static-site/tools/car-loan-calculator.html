@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Loan Calculator - Calculora</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <div style="min-height: 100vh; display: flex; flex-direction: column;">
+    <header style="border-bottom: 1px solid var(--border-color); background: rgba(18, 18, 28, 0.8); backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 50;">
+      <div class="container" style="height: 4rem; display: flex; align-items: center; justify-content: space-between;">
+        <a href="/" style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none; color: var(--text-primary);">
+          <i data-lucide="calculator" style="color: var(--accent-primary);"></i>
+          <span style="font-size: 1.25rem; font-weight: 800; letter-spacing: -0.5px;">Calculora<span style="color: var(--accent-primary);">.</span></span>
+        </a>
+        <nav style="display: flex; align-items: center; gap: 1rem;">
+          <a href="/" style="font-weight: 500;">Home</a>
+          <a href="/about.html" style="font-weight: 500;">About</a>
+          <a href="/contact.html" style="font-weight: 500;">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container main-content" style="flex: 1;">
+      
+<div class="content-section animate-fade-in" style="max-width: 600px; margin: 0 auto;">
+  <h1 class="text-center mb-6">Car Loan Calculator</h1>
+  <div class="card mb-8">
+    <form onsubmit="event.preventDefault(); calculateCarLoan();">
+      <div class="input-group">
+        <label class="input-label">Vehicle Price ($)</label>
+        <input type="number" id="carPrice" class="input-field" placeholder="e.g. 25000" required>
+      </div>
+      <div class="input-group">
+        <label class="input-label">Down Payment ($)</label>
+        <input type="number" id="carDown" class="input-field" placeholder="e.g. 5000" required>
+      </div>
+      <div class="input-group">
+        <label class="input-label">Loan Term (Months)</label>
+        <select id="carTerm" class="input-field">
+          <option value="36">36 Months</option>
+          <option value="48">48 Months</option>
+          <option value="60">60 Months (5 Years)</option>
+          <option value="72">72 Months</option>
+          <option value="84">84 Months</option>
+        </select>
+      </div>
+      <div class="input-group">
+        <label class="input-label">Interest Rate (%)</label>
+        <input type="number" step="0.01" id="carRate" class="input-field" value="5.9" required>
+      </div>
+      <button type="submit" class="btn btn-primary" style="width: 100%;">Calculate Loan</button>
+    </form>
+    
+    <div id="result" style="display: none; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border-color); text-align: center;">
+      <h3 style="color: var(--text-secondary); margin-bottom: 0.5rem;">Estimated Monthly Payment:</h3>
+      <div id="carMonthly" style="font-size: 3.5rem; font-weight: 800; color: #fff; line-height: 1;"></div>
+    </div>
+  </div>
+  
+  <div>
+    <h2>Estimating Your Auto Loan Payments</h2>
+    <p>Buying a car is a major purchase. Understanding exactly how much you will pay each month helps ensure the vehicle fits within your budget. By factoring in the total cost, your initial down payment or trade-in value, and the APR (Annual Percentage Rate) offered by your lender, this tool quickly calculates your expected monthly obligation.</p>
+  </div>
+</div>
+<script>
+  function calculateCarLoan() {
+    const price = parseFloat(document.getElementById('carPrice').value);
+    const down = parseFloat(document.getElementById('carDown').value);
+    const months = parseInt(document.getElementById('carTerm').value);
+    const rate = parseFloat(document.getElementById('carRate').value) / 100 / 12;
+    
+    const p = price - down;
+    let m = 0;
+    
+    if (rate === 0) {
+      m = p / months;
+    } else {
+      m = p * (rate * Math.pow(1 + rate, months)) / (Math.pow(1 + rate, months) - 1);
+    }
+    
+    document.getElementById('carMonthly').textContent = '$' + m.toFixed(2);
+    document.getElementById('result').style.display = 'block';
+  }
+</script>
+
+    </main>
+
+    <footer style="border-top: 1px solid var(--border-color); background: rgba(18, 18, 28, 0.95); padding: 3rem 0; margin-top: auto;">
+      <div class="container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+        <div>
+          <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Calculora<span style="color: var(--accent-primary);">.</span></h3>
+          <p style="font-size: 0.9rem;">Premium, accurate, and free calculators for your everyday financial, health, and academic needs.</p>
+        </div>
+        <div>
+          <h4 style="font-size: 1.05rem; margin-bottom: 1rem; color: #fff;">Quick Links</h4>
+          <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 0.5rem;"><a href="/about.html" style="font-size: 0.9rem;">About Us</a></li>
+            <li style="margin-bottom: 0.5rem;"><a href="/contact.html" style="font-size: 0.9rem;">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="font-size: 1.05rem; margin-bottom: 1rem; color: #fff;">Legal</h4>
+          <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 0.5rem;"><a href="/privacy.html" style="font-size: 0.9rem;">Privacy Policy</a></li>
+            <li style="margin-bottom: 0.5rem;"><a href="/terms.html" style="font-size: 0.9rem;">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="container" style="margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color); text-align: center; color: var(--text-secondary); font-size: 0.85rem;">
+        &copy; 2026 Calculora. All rights reserved.
+      </div>
+    </footer>
+  </div>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>

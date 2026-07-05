@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tip Calculator - Calculora</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <div style="min-height: 100vh; display: flex; flex-direction: column;">
+    <header style="border-bottom: 1px solid var(--border-color); background: rgba(18, 18, 28, 0.8); backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 50;">
+      <div class="container" style="height: 4rem; display: flex; align-items: center; justify-content: space-between;">
+        <a href="/" style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none; color: var(--text-primary);">
+          <i data-lucide="calculator" style="color: var(--accent-primary);"></i>
+          <span style="font-size: 1.25rem; font-weight: 800; letter-spacing: -0.5px;">Calculora<span style="color: var(--accent-primary);">.</span></span>
+        </a>
+        <nav style="display: flex; align-items: center; gap: 1rem;">
+          <a href="/" style="font-weight: 500;">Home</a>
+          <a href="/about.html" style="font-weight: 500;">About</a>
+          <a href="/contact.html" style="font-weight: 500;">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container main-content" style="flex: 1;">
+      
+<div class="content-section animate-fade-in" style="max-width: 600px; margin: 0 auto;">
+  <h1 class="text-center mb-6">Tip Calculator</h1>
+  <div class="card mb-8">
+    <form onsubmit="event.preventDefault(); calculateTip();">
+      <div class="input-group">
+        <label class="input-label">Bill Amount ($)</label>
+        <input type="number" step="0.01" id="bill" class="input-field" placeholder="e.g. 50" required>
+      </div>
+      <div class="input-group">
+        <label class="input-label">Tip Percentage (%)</label>
+        <input type="number" id="tipPct" class="input-field" value="20" required>
+      </div>
+      <div class="input-group">
+        <label class="input-label">Number of People (Split)</label>
+        <input type="number" id="split" class="input-field" value="1" min="1" required>
+      </div>
+      <button type="submit" class="btn btn-primary" style="width: 100%;">Calculate Tip</button>
+    </form>
+    
+    <div id="result" style="display: none; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border-color);">
+      <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 1.1rem;">
+        <span style="color: var(--text-secondary);">Total Tip:</span>
+        <span id="totalTip" style="color: #fff; font-weight: 600;"></span>
+      </div>
+      <div style="display: flex; justify-content: space-between; margin-bottom: 1rem; font-size: 1.1rem;">
+        <span style="color: var(--text-secondary);">Total Bill:</span>
+        <span id="totalBill" style="color: #fff; font-weight: 600;"></span>
+      </div>
+      <div id="splitSection" style="display: flex; justify-content: space-between; font-size: 1.25rem; padding-top: 1rem; border-top: 1px dashed rgba(255,255,255,0.1);">
+        <span style="color: var(--accent-primary); font-weight: 700;">Per Person:</span>
+        <span id="perPerson" style="color: #fff; font-weight: 800;"></span>
+      </div>
+    </div>
+  </div>
+  
+  <div>
+    <h2>Tipping Etiquette and Calculations</h2>
+    <p>Calculating the correct tip after a meal can sometimes be stressful, especially when dining with a large group and splitting the bill. In the United States, a standard tip for good service is typically between 15% and 20%.</p>
+    <p>Our tip calculator allows you to instantly see the exact tip amount, the final bill total, and exactly how much each person owes if you are splitting the check evenly.</p>
+  </div>
+</div>
+<script>
+  function calculateTip() {
+    const bill = parseFloat(document.getElementById('bill').value);
+    const pct = parseFloat(document.getElementById('tipPct').value) / 100;
+    const split = parseInt(document.getElementById('split').value);
+    
+    const tip = bill * pct;
+    const total = bill + tip;
+    const perPerson = total / split;
+    
+    document.getElementById('totalTip').textContent = '$' + tip.toFixed(2);
+    document.getElementById('totalBill').textContent = '$' + total.toFixed(2);
+    document.getElementById('perPerson').textContent = '$' + perPerson.toFixed(2);
+    
+    document.getElementById('splitSection').style.display = split > 1 ? 'flex' : 'none';
+    document.getElementById('result').style.display = 'block';
+  }
+</script>
+
+    </main>
+
+    <footer style="border-top: 1px solid var(--border-color); background: rgba(18, 18, 28, 0.95); padding: 3rem 0; margin-top: auto;">
+      <div class="container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+        <div>
+          <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Calculora<span style="color: var(--accent-primary);">.</span></h3>
+          <p style="font-size: 0.9rem;">Premium, accurate, and free calculators for your everyday financial, health, and academic needs.</p>
+        </div>
+        <div>
+          <h4 style="font-size: 1.05rem; margin-bottom: 1rem; color: #fff;">Quick Links</h4>
+          <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 0.5rem;"><a href="/about.html" style="font-size: 0.9rem;">About Us</a></li>
+            <li style="margin-bottom: 0.5rem;"><a href="/contact.html" style="font-size: 0.9rem;">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="font-size: 1.05rem; margin-bottom: 1rem; color: #fff;">Legal</h4>
+          <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 0.5rem;"><a href="/privacy.html" style="font-size: 0.9rem;">Privacy Policy</a></li>
+            <li style="margin-bottom: 0.5rem;"><a href="/terms.html" style="font-size: 0.9rem;">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="container" style="margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color); text-align: center; color: var(--text-secondary); font-size: 0.85rem;">
+        &copy; 2026 Calculora. All rights reserved.
+      </div>
+    </footer>
+  </div>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>

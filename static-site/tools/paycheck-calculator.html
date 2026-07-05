@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paycheck Calculator - Calculora</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <div style="min-height: 100vh; display: flex; flex-direction: column;">
+    <header style="border-bottom: 1px solid var(--border-color); background: rgba(18, 18, 28, 0.8); backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 50;">
+      <div class="container" style="height: 4rem; display: flex; align-items: center; justify-content: space-between;">
+        <a href="/" style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none; color: var(--text-primary);">
+          <i data-lucide="calculator" style="color: var(--accent-primary);"></i>
+          <span style="font-size: 1.25rem; font-weight: 800; letter-spacing: -0.5px;">Calculora<span style="color: var(--accent-primary);">.</span></span>
+        </a>
+        <nav style="display: flex; align-items: center; gap: 1rem;">
+          <a href="/" style="font-weight: 500;">Home</a>
+          <a href="/about.html" style="font-weight: 500;">About</a>
+          <a href="/contact.html" style="font-weight: 500;">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container main-content" style="flex: 1;">
+      
+<div class="content-section animate-fade-in" style="max-width: 600px; margin: 0 auto;">
+  <h1 class="text-center mb-6">Paycheck Calculator</h1>
+  <div class="card mb-8">
+    <form id="paycheckForm" onsubmit="event.preventDefault(); calculatePaycheck();">
+      <div class="input-group">
+        <label class="input-label">Gross Salary ($)</label>
+        <input type="number" id="gross" class="input-field" placeholder="e.g. 50000" required>
+      </div>
+      <div class="input-group">
+        <label class="input-label">Pay Frequency</label>
+        <select id="frequency" class="input-field">
+          <option value="annual">Annually</option>
+          <option value="monthly">Monthly</option>
+          <option value="biweekly">Bi-weekly</option>
+          <option value="weekly">Weekly</option>
+        </select>
+      </div>
+      <div class="input-group">
+        <label class="input-label">Estimated Tax Rate (%)</label>
+        <input type="number" id="tax" class="input-field" value="22" required>
+      </div>
+      <button type="submit" class="btn btn-primary" style="width: 100%;">Calculate Net Pay</button>
+    </form>
+    
+    <div id="result" style="display: none; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border-color);">
+      <h3 style="color: var(--accent-primary); text-align: center; margin-bottom: 1rem;">Your Take-Home Pay</h3>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; text-align: center;">
+        <div style="background: rgba(0,0,0,0.2); padding: 1rem; border-radius: var(--radius-md);">
+          <div style="font-size: 0.85rem; color: var(--text-secondary);">Per Pay Period</div>
+          <div id="periodPay" style="font-size: 1.5rem; font-weight: 700; color: #fff;"></div>
+        </div>
+        <div style="background: rgba(0,0,0,0.2); padding: 1rem; border-radius: var(--radius-md);">
+          <div style="font-size: 0.85rem; color: var(--text-secondary);">Annual Net</div>
+          <div id="annualPay" style="font-size: 1.5rem; font-weight: 700; color: #fff;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div>
+    <h2>How a Paycheck Calculator Works</h2>
+    <p>A paycheck calculator is a powerful tool designed to estimate your net "take-home" pay. By inputting your gross salary, pay frequency, and estimated tax rates, the calculator deducts the appropriate percentages to give you a clear picture of what will actually hit your bank account.</p>
+    <p>This is extremely useful when considering a new job offer or planning your personal budget for the year. Remember that actual taxes can vary based on state laws, local taxes, and personal deductions like 401(k) contributions and health insurance premiums.</p>
+  </div>
+</div>
+<script>
+  function calculatePaycheck() {
+    const gross = parseFloat(document.getElementById('gross').value);
+    const tax = parseFloat(document.getElementById('tax').value) / 100;
+    const freq = document.getElementById('frequency').value;
+    
+    const annualGross = freq === 'monthly' ? gross * 12 : freq === 'biweekly' ? gross * 26 : freq === 'weekly' ? gross * 52 : gross;
+    const annualNet = annualGross * (1 - tax);
+    
+    let periodNet = annualNet;
+    if (freq === 'monthly') periodNet = annualNet / 12;
+    if (freq === 'biweekly') periodNet = annualNet / 26;
+    if (freq === 'weekly') periodNet = annualNet / 52;
+    
+    document.getElementById('periodPay').textContent = '$' + periodNet.toFixed(2);
+    document.getElementById('annualPay').textContent = '$' + annualNet.toFixed(2);
+    document.getElementById('result').style.display = 'block';
+  }
+</script>
+
+    </main>
+
+    <footer style="border-top: 1px solid var(--border-color); background: rgba(18, 18, 28, 0.95); padding: 3rem 0; margin-top: auto;">
+      <div class="container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+        <div>
+          <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Calculora<span style="color: var(--accent-primary);">.</span></h3>
+          <p style="font-size: 0.9rem;">Premium, accurate, and free calculators for your everyday financial, health, and academic needs.</p>
+        </div>
+        <div>
+          <h4 style="font-size: 1.05rem; margin-bottom: 1rem; color: #fff;">Quick Links</h4>
+          <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 0.5rem;"><a href="/about.html" style="font-size: 0.9rem;">About Us</a></li>
+            <li style="margin-bottom: 0.5rem;"><a href="/contact.html" style="font-size: 0.9rem;">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="font-size: 1.05rem; margin-bottom: 1rem; color: #fff;">Legal</h4>
+          <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 0.5rem;"><a href="/privacy.html" style="font-size: 0.9rem;">Privacy Policy</a></li>
+            <li style="margin-bottom: 0.5rem;"><a href="/terms.html" style="font-size: 0.9rem;">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="container" style="margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color); text-align: center; color: var(--text-secondary); font-size: 0.85rem;">
+        &copy; 2026 Calculora. All rights reserved.
+      </div>
+    </footer>
+  </div>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>
