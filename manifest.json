@@ -1,0 +1,16 @@
+{
+  "name": "Calculora",
+  "short_name": "Calculora",
+  "description": "Free, accurate, and lightning-fast calculators for financial, health, and academic needs.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8fafc",
+  "theme_color": "#2563eb",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
