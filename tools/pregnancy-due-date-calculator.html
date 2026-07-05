@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pregnancy Due Date Calculator - Calculora</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <meta name="description" content="Calculate your estimated due date (EDD) quickly and accurately using standard medical formulas.">
+  <meta name="keywords" content="pregnancy due date calculator, EDD calculator, conception date, trimester timeline">
+  <meta name="author" content="Calculora">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Pregnancy Due Date Calculator - Calculora">
+  <meta property="og:description" content="Calculate your estimated due date (EDD) quickly and accurately using standard medical formulas.">
+  <meta property="og:url" content="https://calculora.bongshai.com/tools/pregnancy-due-date-calculator.html">
+  <meta property="og:site_name" content="Calculora">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pregnancy Due Date Calculator - Calculora">
+  <meta name="twitter:description" content="Calculate your estimated due date (EDD) quickly and accurately using standard medical formulas.">
+  <link rel="canonical" href="https://calculora.bongshai.com/tools/pregnancy-due-date-calculator.html">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#2563eb">
+  <meta name="msapplication-TileColor" content="#2563eb">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Calculora",
+  "url": "https://calculora.bongshai.com",
+  "description": "Premium Tools for Everyday Life, Tailored for US Consumers.",
+  "logo": "https://calculora.bongshai.com/favicon.svg",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "Customer Service",
+    "email": "support@calculora.com"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://calculora.bongshai.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Tools",
+      "item": "https://calculora.bongshai.com/tools"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Pregnancy Due Date Calculator",
+      "item": "https://calculora.bongshai.com/tools/pregnancy-due-date-calculator.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+  <div style="min-height: 100vh; display: flex; flex-direction: column;">
+    <header style="border-bottom: 1px solid var(--border-color); background: rgba(18, 18, 28, 0.8); backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 50;">
+      <div class="container" style="height: 4rem; display: flex; align-items: center; justify-content: space-between;">
+        <a href="/" style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none; color: var(--text-primary);">
+          <i data-lucide="calculator" style="color: var(--accent-primary);"></i>
+          <span style="font-size: 1.25rem; font-weight: 800; letter-spacing: -0.5px;">Calculora<span style="color: var(--accent-primary);">.</span></span>
+        </a>
+        <nav style="display: flex; align-items: center; gap: 1rem;">
+          <a href="/" style="font-weight: 500;">Home</a>
+          <a href="/about.html" style="font-weight: 500;">About</a>
+          <a href="/contact.html" style="font-weight: 500;">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container main-content" style="flex: 1;">
+      <div class="content-section animate-fade-in" style="max-width: 600px; margin: 0 auto;">
+        <h1 class="text-center mb-6">Pregnancy Due Date Calculator</h1>
+        <div class="card mb-8">
+          <form onsubmit="event.preventDefault(); calc();">
+            <div class="input-group">\n  <label class="input-label">First day of last period</label>\n  <input type="date" id="lmp" class="input-field" placeholder="" value=""  required>\n</div>\n
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Calculate</button>
+          </form>
+          
+          <div id="result" style="display: none; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border-color); text-align: center;">
+            <div id="outputVal" style="font-size: 2.2rem; font-weight: 800; color: #fff;"></div>
+          </div>
+        </div>
+        
+        
+      <div style="margin-top: 3rem;">
+        <h2>Tracking Your Pregnancy Timeline</h2>
+        <p>Finding out you are expecting is one of life's greatest moments. One of the very first questions expectant mothers in the US ask is, "When is the baby due?" Our Pregnancy Due Date Calculator uses the standard medical formula adopted by the American College of Obstetricians and Gynecologists (ACOG) to estimate your due date.</p>
+        
+        <h3>Naegele's Rule</h3>
+        <p>Most healthcare providers estimate your Estimated Due Date (EDD) using a simple formula called Naegele's Rule. The formula is:</p>
+        <p><strong>First Day of Last Menstrual Period (LMP) + 7 Days - 3 Months + 1 Year = EDD</strong></p>
+        <p>Simply put, human pregnancy lasts about 280 days (or 40 weeks) starting from the first day of your last menstrual cycle.</p>
+
+        <h3>Frequently Asked Questions</h3>
+        <details class="mb-4 group rounded-lg border border-slate-200 bg-white p-4">
+          <summary class="cursor-pointer font-semibold">How accurate is this due date?</summary>
+          <p class="mt-2 text-slate-600">It is an *estimate*. Statistically, only about 4% to 5% of babies in the US are born exactly on their estimated due date. It is perfectly normal to deliver anywhere between week 37 and week 42.</p>
+        </details>
+        <details class="mb-4 group rounded-lg border border-slate-200 bg-white p-4">
+          <summary class="cursor-pointer font-semibold">What if I know my exact conception date?</summary>
+          <p class="mt-2 text-slate-600">If you know the exact day of conception (e.g., through IVF tracking), you can calculate the due date by adding exactly 266 days to the conception date.</p>
+        </details>
+      </div>
+        
+      </div>
+      <script>
+        function calc() {
+          const run = () => {
+            
+      const lmp = new Date(document.getElementById('lmp').value);
+      if(isNaN(lmp.getTime())) return 'Please enter a valid date.';
+      const edd = new Date(lmp.getTime() + (280 * 24 * 60 * 60 * 1000));
+      return 'Est. Due Date: ' + edd.toDateString();
+    
+          };
+          const res = run();
+          document.getElementById('outputVal').textContent = res;
+          document.getElementById('result').style.display = 'block';
+        }
+      </script>
+    </main>
+
+    <footer style="border-top: 1px solid var(--border-color); background: rgba(18, 18, 28, 0.95); padding: 3rem 0; margin-top: auto;">
+      <div class="container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+        <div>
+          <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Calculora<span style="color: var(--accent-primary);">.</span></h3>
+          <p style="font-size: 0.9rem;">Premium, accurate, and free calculators for your everyday financial, health, and academic needs.</p>
+        </div>
+        <div>
+          <h4 style="font-size: 1.05rem; margin-bottom: 1rem; color: #fff;">Quick Links</h4>
+          <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 0.5rem;"><a href="/about.html" style="font-size: 0.9rem;">About Us</a></li>
+            <li style="margin-bottom: 0.5rem;"><a href="/contact.html" style="font-size: 0.9rem;">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="font-size: 1.05rem; margin-bottom: 1rem; color: #fff;">Legal</h4>
+          <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 0.5rem;"><a href="/privacy.html" style="font-size: 0.9rem;">Privacy Policy</a></li>
+            <li style="margin-bottom: 0.5rem;"><a href="/terms.html" style="font-size: 0.9rem;">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="container" style="margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color); text-align: center; color: var(--text-secondary); font-size: 0.85rem;">
+        &copy; 2026 Calculora. All rights reserved.
+      </div>
+    </footer>
+  </div>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>

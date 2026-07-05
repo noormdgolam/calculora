@@ -1,0 +1,71 @@
+
+                <a href="/tools/compound-interest-calculator.html" style="text-decoration: none;">
+                  <div class="rounded-lg border border-slate-200 bg-slate-50 p-6 transition-all hover:border-blue-400 hover:shadow-lg" style="height: 100%;">
+                    <div style="color: var(--accent-primary);"><i data-lucide="trending-up" style="width: 2.5rem; height: 2.5rem;"></i></div>
+                    <h3 class="mt-4 text-xl font-semibold text-slate-900">Compound Interest Calculator</h3>
+                    <p class="mt-2 text-slate-600">Calculate the future value of your investments with our US compound interest calculator. Estimate APY growth over time.</p>
+                  </div>
+                </a>
+                <a href="/tools/retirement-estimator.html" style="text-decoration: none;">
+                  <div class="rounded-lg border border-slate-200 bg-slate-50 p-6 transition-all hover:border-blue-400 hover:shadow-lg" style="height: 100%;">
+                    <div style="color: var(--accent-primary);"><i data-lucide="coffee" style="width: 2.5rem; height: 2.5rem;"></i></div>
+                    <h3 class="mt-4 text-xl font-semibold text-slate-900">Retirement Estimator</h3>
+                    <p class="mt-2 text-slate-600">Estimate your 401(k) and IRA growth with our US Retirement Estimator. Plan your financial independence early.</p>
+                  </div>
+                </a>
+                <a href="/tools/salary-to-hourly-calculator.html" style="text-decoration: none;">
+                  <div class="rounded-lg border border-slate-200 bg-slate-50 p-6 transition-all hover:border-blue-400 hover:shadow-lg" style="height: 100%;">
+                    <div style="color: var(--accent-primary);"><i data-lucide="clock" style="width: 2.5rem; height: 2.5rem;"></i></div>
+                    <h3 class="mt-4 text-xl font-semibold text-slate-900">Salary to Hourly Calculator</h3>
+                    <p class="mt-2 text-slate-600">Convert your annual salary to an hourly wage instantly. Understand your true US compensation.</p>
+                  </div>
+                </a>
+                <a href="/tools/discount-sales-calculator.html" style="text-decoration: none;">
+                  <div class="rounded-lg border border-slate-200 bg-slate-50 p-6 transition-all hover:border-blue-400 hover:shadow-lg" style="height: 100%;">
+                    <div style="color: var(--accent-primary);"><i data-lucide="tag" style="width: 2.5rem; height: 2.5rem;"></i></div>
+                    <h3 class="mt-4 text-xl font-semibold text-slate-900">Discount & Sales Calculator</h3>
+                    <p class="mt-2 text-slate-600">Calculate final prices after discounts and coupons. Perfect for US holiday shopping like Black Friday.</p>
+                  </div>
+                </a>
+                <a href="/tools/bmr-calculator.html" style="text-decoration: none;">
+                  <div class="rounded-lg border border-slate-200 bg-slate-50 p-6 transition-all hover:border-blue-400 hover:shadow-lg" style="height: 100%;">
+                    <div style="color: var(--accent-primary);"><i data-lucide="activity" style="width: 2.5rem; height: 2.5rem;"></i></div>
+                    <h3 class="mt-4 text-xl font-semibold text-slate-900">BMR Calculator</h3>
+                    <p class="mt-2 text-slate-600">Calculate your Basal Metabolic Rate (BMR) to understand your daily calorie burn. Essential US health tool.</p>
+                  </div>
+                </a>
+                <a href="/tools/auto-depreciation-calculator.html" style="text-decoration: none;">
+                  <div class="rounded-lg border border-slate-200 bg-slate-50 p-6 transition-all hover:border-blue-400 hover:shadow-lg" style="height: 100%;">
+                    <div style="color: var(--accent-primary);"><i data-lucide="car" style="width: 2.5rem; height: 2.5rem;"></i></div>
+                    <h3 class="mt-4 text-xl font-semibold text-slate-900">Auto Depreciation Calculator</h3>
+                    <p class="mt-2 text-slate-600">Estimate how much value your car will lose over time. Crucial tool for US car buyers.</p>
+                  </div>
+                </a>
+                <a href="/tools/roi-calculator.html" style="text-decoration: none;">
+                  <div class="rounded-lg border border-slate-200 bg-slate-50 p-6 transition-all hover:border-blue-400 hover:shadow-lg" style="height: 100%;">
+                    <div style="color: var(--accent-primary);"><i data-lucide="briefcase" style="width: 2.5rem; height: 2.5rem;"></i></div>
+                    <h3 class="mt-4 text-xl font-semibold text-slate-900">ROI Calculator</h3>
+                    <p class="mt-2 text-slate-600">Measure the Return on Investment (ROI) for your business or personal finances.</p>
+                  </div>
+                </a>
+                <a href="/tools/date-duration-calculator.html" style="text-decoration: none;">
+                  <div class="rounded-lg border border-slate-200 bg-slate-50 p-6 transition-all hover:border-blue-400 hover:shadow-lg" style="height: 100%;">
+                    <div style="color: var(--accent-primary);"><i data-lucide="calendar" style="width: 2.5rem; height: 2.5rem;"></i></div>
+                    <h3 class="mt-4 text-xl font-semibold text-slate-900">Date Duration Calculator</h3>
+                    <p class="mt-2 text-slate-600">Calculate the exact number of days between two dates. Essential utility for planning and tracking.</p>
+                  </div>
+                </a>
+                <a href="/tools/pregnancy-due-date-calculator.html" style="text-decoration: none;">
+                  <div class="rounded-lg border border-slate-200 bg-slate-50 p-6 transition-all hover:border-blue-400 hover:shadow-lg" style="height: 100%;">
+                    <div style="color: var(--accent-primary);"><i data-lucide="heart" style="width: 2.5rem; height: 2.5rem;"></i></div>
+                    <h3 class="mt-4 text-xl font-semibold text-slate-900">Pregnancy Due Date Calculator</h3>
+                    <p class="mt-2 text-slate-600">Calculate your estimated due date (EDD) quickly and accurately using standard medical formulas.</p>
+                  </div>
+                </a>
+                <a href="/tools/loan-amortization-calculator.html" style="text-decoration: none;">
+                  <div class="rounded-lg border border-slate-200 bg-slate-50 p-6 transition-all hover:border-blue-400 hover:shadow-lg" style="height: 100%;">
+                    <div style="color: var(--accent-primary);"><i data-lucide="bar-chart" style="width: 2.5rem; height: 2.5rem;"></i></div>
+                    <h3 class="mt-4 text-xl font-semibold text-slate-900">Loan Amortization Calculator</h3>
+                    <p class="mt-2 text-slate-600">Generate a detailed amortization schedule for any US loan. See exactly how much interest you are paying.</p>
+                  </div>
+                </a>

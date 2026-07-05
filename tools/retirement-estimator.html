@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Retirement Estimator - Calculora</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <meta name="description" content="Estimate your 401(k) and IRA growth with our US Retirement Estimator. Plan your financial independence early.">
+  <meta name="keywords" content="US retirement estimator, 401k growth calculator, Roth IRA calculator, FIRE movement calculator">
+  <meta name="author" content="Calculora">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Retirement Estimator - Calculora">
+  <meta property="og:description" content="Estimate your 401(k) and IRA growth with our US Retirement Estimator. Plan your financial independence early.">
+  <meta property="og:url" content="https://calculora.bongshai.com/tools/retirement-estimator.html">
+  <meta property="og:site_name" content="Calculora">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Retirement Estimator - Calculora">
+  <meta name="twitter:description" content="Estimate your 401(k) and IRA growth with our US Retirement Estimator. Plan your financial independence early.">
+  <link rel="canonical" href="https://calculora.bongshai.com/tools/retirement-estimator.html">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#2563eb">
+  <meta name="msapplication-TileColor" content="#2563eb">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Calculora",
+  "url": "https://calculora.bongshai.com",
+  "description": "Premium Tools for Everyday Life, Tailored for US Consumers.",
+  "logo": "https://calculora.bongshai.com/favicon.svg",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "Customer Service",
+    "email": "support@calculora.com"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://calculora.bongshai.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Tools",
+      "item": "https://calculora.bongshai.com/tools"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Retirement Estimator",
+      "item": "https://calculora.bongshai.com/tools/retirement-estimator.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+  <div style="min-height: 100vh; display: flex; flex-direction: column;">
+    <header style="border-bottom: 1px solid var(--border-color); background: rgba(18, 18, 28, 0.8); backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 50;">
+      <div class="container" style="height: 4rem; display: flex; align-items: center; justify-content: space-between;">
+        <a href="/" style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none; color: var(--text-primary);">
+          <i data-lucide="calculator" style="color: var(--accent-primary);"></i>
+          <span style="font-size: 1.25rem; font-weight: 800; letter-spacing: -0.5px;">Calculora<span style="color: var(--accent-primary);">.</span></span>
+        </a>
+        <nav style="display: flex; align-items: center; gap: 1rem;">
+          <a href="/" style="font-weight: 500;">Home</a>
+          <a href="/about.html" style="font-weight: 500;">About</a>
+          <a href="/contact.html" style="font-weight: 500;">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container main-content" style="flex: 1;">
+      <div class="content-section animate-fade-in" style="max-width: 600px; margin: 0 auto;">
+        <h1 class="text-center mb-6">Retirement Estimator</h1>
+        <div class="card mb-8">
+          <form onsubmit="event.preventDefault(); calc();">
+            <div class="input-group">\n  <label class="input-label">Current Age</label>\n  <input type="number" id="currentAge" class="input-field" placeholder="30" value=""  required>\n</div>\n<div class="input-group">\n  <label class="input-label">Retirement Age</label>\n  <input type="number" id="retireAge" class="input-field" placeholder="65" value=""  required>\n</div>\n<div class="input-group">\n  <label class="input-label">Currently Saved ($)</label>\n  <input type="number" id="currentSaved" class="input-field" placeholder="50000" value=""  required>\n</div>\n<div class="input-group">\n  <label class="input-label">Monthly Savings ($)</label>\n  <input type="number" id="monthlySave" class="input-field" placeholder="1000" value=""  required>\n</div>\n
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Calculate</button>
+          </form>
+          
+          <div id="result" style="display: none; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border-color); text-align: center;">
+            <div id="outputVal" style="font-size: 2.2rem; font-weight: 800; color: #fff;"></div>
+          </div>
+        </div>
+        
+        
+      <div style="margin-top: 3rem;">
+        <h2>Planning for a US Retirement</h2>
+        <p>Retirement in the United States requires careful planning. Unlike generations past where corporate pensions were the norm, today's workers rely heavily on self-funded accounts like 401(k)s and IRAs. Our Retirement Estimator projects your future nest egg based on a conservative 7% annual market return.</p>
+        
+        <h3>The 4% Rule</h3>
+        <p>A common guideline in US retirement planning is the "4% Rule." It suggests that if you withdraw 4% of your total portfolio value in your first year of retirement (and adjust for inflation thereafter), your money has a high probability of lasting 30 years.</p>
+        <p>For example, if this calculator estimates a $1,000,000 nest egg, you could safely withdraw approximately $40,000 per year.</p>
+
+        <h3>Frequently Asked Questions</h3>
+        <details class="mb-4 group rounded-lg border border-slate-200 bg-white p-4">
+          <summary class="cursor-pointer font-semibold">Should I max out my 401(k)?</summary>
+          <p class="mt-2 text-slate-600">If your employer offers a matching contribution, you should always contribute at least enough to capture the full match—it is literally free money. After that, prioritizing a Roth IRA is often a smart move.</p>
+        </details>
+        <details class="mb-4 group rounded-lg border border-slate-200 bg-white p-4">
+          <summary class="cursor-pointer font-semibold">Does this include Social Security?</summary>
+          <p class="mt-2 text-slate-600">No, this calculator only estimates your personal investment portfolio. You will likely receive US Social Security benefits on top of this amount depending on your earning history.</p>
+        </details>
+      </div>
+        
+      </div>
+      <script>
+        function calc() {
+          const run = () => {
+            
+      const currentAge = parseFloat(document.getElementById('currentAge').value || 0);
+      const retireAge = parseFloat(document.getElementById('retireAge').value || 0);
+      const p = parseFloat(document.getElementById('currentSaved').value || 0);
+      const pmt = parseFloat(document.getElementById('monthlySave').value || 0);
+      const r = 0.07; // Assuming conservative 7% growth
+      const t = Math.max(0, retireAge - currentAge);
+      
+      const total = p * Math.pow(1 + r/12, 12 * t) + pmt * ( (Math.pow(1 + r/12, 12 * t) - 1) / (r/12) );
+      return 'Est. Nest Egg: 
+          };
+          const res = run();
+          document.getElementById('outputVal').textContent = res;
+          document.getElementById('result').style.display = 'block';
+        }
+      </script>
+    </main>
+
+    <footer style="border-top: 1px solid var(--border-color); background: rgba(18, 18, 28, 0.95); padding: 3rem 0; margin-top: auto;">
+      <div class="container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+        <div>
+          <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Calculora<span style="color: var(--accent-primary);">.</span></h3>
+          <p style="font-size: 0.9rem;">Premium, accurate, and free calculators for your everyday financial, health, and academic needs.</p>
+        </div>
+        <div>
+          <h4 style="font-size: 1.05rem; margin-bottom: 1rem; color: #fff;">Quick Links</h4>
+          <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 0.5rem;"><a href="/about.html" style="font-size: 0.9rem;">About Us</a></li>
+            <li style="margin-bottom: 0.5rem;"><a href="/contact.html" style="font-size: 0.9rem;">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="font-size: 1.05rem; margin-bottom: 1rem; color: #fff;">Legal</h4>
+          <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 0.5rem;"><a href="/privacy.html" style="font-size: 0.9rem;">Privacy Policy</a></li>
+            <li style="margin-bottom: 0.5rem;"><a href="/terms.html" style="font-size: 0.9rem;">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="container" style="margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color); text-align: center; color: var(--text-secondary); font-size: 0.85rem;">
+        &copy; 2026 Calculora. All rights reserved.
+      </div>
+    </footer>
+  </div>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>
+ + total.toFixed(2);
+    
+          };
+          const res = run();
+          document.getElementById('outputVal').textContent = res;
+          document.getElementById('result').style.display = 'block';
+        }
+      </script>
+    </main>
+
+    <footer style="border-top: 1px solid var(--border-color); background: rgba(18, 18, 28, 0.95); padding: 3rem 0; margin-top: auto;">
+      <div class="container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+        <div>
+          <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Calculora<span style="color: var(--accent-primary);">.</span></h3>
+          <p style="font-size: 0.9rem;">Premium, accurate, and free calculators for your everyday financial, health, and academic needs.</p>
+        </div>
+        <div>
+          <h4 style="font-size: 1.05rem; margin-bottom: 1rem; color: #fff;">Quick Links</h4>
+          <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 0.5rem;"><a href="/about.html" style="font-size: 0.9rem;">About Us</a></li>
+            <li style="margin-bottom: 0.5rem;"><a href="/contact.html" style="font-size: 0.9rem;">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="font-size: 1.05rem; margin-bottom: 1rem; color: #fff;">Legal</h4>
+          <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 0.5rem;"><a href="/privacy.html" style="font-size: 0.9rem;">Privacy Policy</a></li>
+            <li style="margin-bottom: 0.5rem;"><a href="/terms.html" style="font-size: 0.9rem;">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="container" style="margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color); text-align: center; color: var(--text-secondary); font-size: 0.85rem;">
+        &copy; 2026 Calculora. All rights reserved.
+      </div>
+    </footer>
+  </div>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>

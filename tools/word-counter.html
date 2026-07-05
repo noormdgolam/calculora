@@ -130,11 +130,36 @@
     <textarea id="textInput" class="input-field" rows="12" placeholder="Start typing or paste your text here..." oninput="analyzeText()"></textarea>
   </div>
   
-  <div>
-    <h2>Why Use a Word Counter?</h2>
-    <p>Whether you're an author writing a novel, a student working on an essay with a strict word limit, or a social media manager crafting a tweet, keeping track of your word and character counts is essential.</p>
-    <p>Our real-time word counter processes your text instantly directly in your browser. It also estimates the reading time based on an average reading speed of 225 words per minute.</p>
+
+  <div style="margin-top: 3rem;">
+    <h2>The Importance of Word and Character Counting</h2>
+    <p>In the digital age, length matters. Whether you are an academic writing a strict 500-word essay, a social media manager crafting a tweet under 280 characters, or an SEO specialist optimizing meta descriptions, our Word and Character Counter provides instant, real-time metrics for your text.</p>
+    
+    <h3>Key Metrics Analyzed</h3>
+    <p>Our tool goes beyond basic word counting to provide a comprehensive analysis of your text:</p>
+    <ul>
+      <li><strong>Word Count:</strong> The total number of words separated by spaces. Essential for essays, articles, and book chapters.</li>
+      <li><strong>Character Count:</strong> The absolute number of keystrokes. Critical for social media platforms (Twitter, LinkedIn) and SMS marketing limits.</li>
+    </ul>
+
+    <h3>Reading Time Estimation</h3>
+    <p>Modern internet users have short attention spans. Providing an estimated "Reading Time" at the top of an article greatly improves user engagement. Our tool estimates reading time based on the average adult reading speed of approximately 225 to 250 words per minute.</p>
+
+    <h3>Frequently Asked Questions</h3>
+    <details class="mb-4 group rounded-lg border border-slate-200 bg-white p-4">
+      <summary class="cursor-pointer font-semibold">Do spaces count as characters?</summary>
+      <p class="mt-2 text-slate-600">Yes. In standard computing and character limit rules (like on Twitter), a space is considered a character. Our tool counts every single keystroke.</p>
+    </details>
+    <details class="mb-4 group rounded-lg border border-slate-200 bg-white p-4">
+      <summary class="cursor-pointer font-semibold">Is my text saved or stored?</summary>
+      <p class="mt-2 text-slate-600">No. Our word counter relies entirely on client-side JavaScript. Your text is processed directly in your browser and is never sent to a server, ensuring 100% privacy.</p>
+    </details>
+    <details class="mb-4 group rounded-lg border border-slate-200 bg-white p-4">
+      <summary class="cursor-pointer font-semibold">How long is a 1,000-word essay?</summary>
+      <p class="mt-2 text-slate-600">Using standard formatting (12pt font, double-spaced, 1-inch margins), a 1,000-word essay is approximately 3.5 to 4 pages long.</p>
+    </details>
   </div>
+</div>
 </div>
 <script>
   function analyzeText() {
